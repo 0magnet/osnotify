@@ -10,10 +10,10 @@ a shell line or into AppleScript source — turns a message into a command.
 
 | Platform | Backend |
 |---|---|
-| Linux/BSD | `notify-send`, gated on `DISPLAY`/`WAYLAND_DISPLAY` |
+| Linux | `notify-send`, gated on `DISPLAY`/`WAYLAND_DISPLAY` |
 | macOS | `osascript` running a **fixed** AppleScript |
 | Windows | PowerShell toast, text inserted via `CreateTextNode` (XML-escaped) |
-| everything else | no-op |
+| everything else, the BSDs included | no-op |
 
 ## Install
 
