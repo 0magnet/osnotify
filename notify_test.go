@@ -2,6 +2,7 @@ package osnotify
 
 import (
 	"os/exec"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -76,6 +77,9 @@ func TestNotify_Unavailable(t *testing.T) {
 // never concatenated into a shell line or script source, and we must never
 // route through a shell interpreter.
 func TestNotify_PassesTextAsData(t *testing.T) {
+	if runtime.GOOS == "js" {
+		t.Skip("no desktop notification backend under js/wasm")
+	}
 	forceAvail(t, true)
 	got := captureCmd(t)
 
