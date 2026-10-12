@@ -78,3 +78,35 @@ places untrusted title and message as leading positional arguments with no `--`
 terminator, which is the injection above.
 
 Extracted from [skywire](https://github.com/skycoin/skywire).
+
+## Dependency Graph
+
+Made with [goda](https://github.com/loov/goda):
+
+```
+go run github.com/loov/goda@latest graph github.com/0magnet/osnotify/... | dot -Tsvg -o docs/osnotify-goda-graph.svg
+```
+
+![Dependency Graph](docs/osnotify-goda-graph.svg "github.com/0magnet/osnotify Dependency Graph")
+
+## Lines of Code
+
+Made with [gocloc](https://github.com/hhatto/gocloc) (excludes `vendor/`, `node_modules/`, `.git/`):
+
+```
+gocloc --not-match-d='(vendor|node_modules|\.git)' .
+```
+
+```
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Go                               6             38            101            266
+Makefile                         1             22             52            111
+YAML                             1              0              7             98
+Markdown                         1             24              0             87
+Bourne Shell                     1              8             17             31
+-------------------------------------------------------------------------------
+TOTAL                           10             92            177            593
+-------------------------------------------------------------------------------
+```
